@@ -1,0 +1,112 @@
+.CardContainer {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color:black;
+  padding: 10px;
+  overflow: hidden;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.productNameImgContainer{
+  width: 50%;
+  height: 80%;
+  border-radius: 5px;
+  display: flex;
+  color: white;
+  justify-content: start;
+  align-items: center;
+  
+}
+.productNameImgContainer>img{
+  height: 100%;
+  width: 30%;
+  object-fit: contain;
+}
+
+.productNameContainer{
+  margin-left: 5px;
+  align-self: flex-start;
+}
+.productActionContainer{
+  height: 25%;
+  width: 15%;
+  align-self: flex-end;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.productDescContainer{
+  width: 15%;
+  height: 80%;
+  color: white;
+  word-wrap:break-word;
+  text-align: center;
+}
+
+.addToCartBtn{
+  height: 90%;
+  width: 60%;
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+  background-color: #173d5c;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img{
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}
+.textContainer {
+  text-align: center;
+  color: white;
+  text-transform: capitalize;
+}
+
+.iconContainer {
+  display: flex;
+  width: 100%;
+  height: 18%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.editContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 40%;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+
+.editContainer > a {
+  outline: none;
+  border: none;
+}
+.deleteContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 40%;
+  color: white;
+  cursor: pointer;
+  background-color: red;
+  border-radius: 5px;
+}

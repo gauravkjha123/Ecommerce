@@ -1,0 +1,11 @@
+.container{
+    margin: auto;
+    width: 80%;
+    height:fit-content;
+    background-color: aqua;
+}
+
+.detailsContainer{
+    width: 80%;
+    background-color: aqua;
+}
