@@ -1,0 +1,19 @@
+.CardContainer {
+    height: fit-content;
+    width: 40%;
+    box-sizing: border-box;
+    background-color: lightgray;
+    overflow: hidden;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .detailsKeyContainer{
+    width: 90%;
+    height: fit-content;
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+    
+  }

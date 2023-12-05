@@ -1,7 +1,6 @@
 import CardStyle from "../style/cartItem.style.module.css";
 import increamentImg from "../assets/images/increament.png";
 import decreamentImg from "../assets/images/decreament.png";
-import editImg from "../assets/images/edit.png";
 import { useDispatch } from "react-redux";
 import { deleteAlbum } from "../redux/reducers/albumReducer";
 
