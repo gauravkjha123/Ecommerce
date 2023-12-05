@@ -1,5 +1,5 @@
 import AlbumListStyle from "../style/albumList.style.module.css";
-import { Card } from "../components/card";
+import { ProductItem } from "../components/productItem";
 import { useSelector } from "react-redux";
 import { albumSelector } from "../redux/reducers/albumReducer";
 import { NavLink } from "react-router-dom";
@@ -14,7 +14,7 @@ export const ProductListPage = () => {
       </div>
       <div className={AlbumListStyle.listContainer}>
         {albums.map((value, index) => (
-          <Card key={index} title={value.title} id={value.id} />
+          <ProductItem key={index} title={value.title} id={value.id} />
         ))}
       </div>
     </div>

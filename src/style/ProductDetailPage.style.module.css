@@ -2,10 +2,40 @@
     margin: auto;
     width: 80%;
     height:fit-content;
-    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.crouselContainer{
+    width: 60%;
 }
 
 .detailsContainer{
-    width: 80%;
-    background-color: aqua;
+    width: 30%;
+    color: black;
+    text-align: start;
 }
+.btnContainer{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn {
+    width: 40%;
+    border: none;
+    outline: none;
+    color: white;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #328000;
+    cursor: pointer;
+  }
+  
+  .detailKey{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #328000;
+  }

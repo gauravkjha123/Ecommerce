@@ -4,13 +4,14 @@ import { NavBar } from './components/navbar';
 import { ProductListPage } from './pages/productListPage';
 import { AddProductPage } from './pages/addProductPage';
 import { ProductDetaills } from './pages/ProductDetailPage';
+import { CartItem } from './components/cartItem';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <NavBar />,
     children: [
-      { index: true, element: <ProductListPage /> },
+      { index: true, element: <CartItem /> },
       {path:"add",element:<AddProductPage/>},
       {path:"update/:id",element:<ProductDetaills/>},
       

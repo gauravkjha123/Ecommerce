@@ -1,7 +1,5 @@
 import BackBtntyle from "../style/backBtn.style.module.css";
 import { TiArrowBack } from "react-icons/ti";
-
-import { MdDelete, MdModeEditOutline } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { deleteAlbum } from "../redux/reducers/albumReducer";
 import { NavLink } from "react-router-dom";

@@ -1,9 +1,8 @@
+import "react-multi-carousel/lib/styles.css";
 import productDeatilsPageStyle from "../style/ProductDetailPage.style.module.css";
 import Carousel from "react-multi-carousel";
 import editImg from "../assets/images/user.png"
 import cartImg from "../assets/images/cart.png"
-import "react-multi-carousel/lib/styles.css";
-import { Form } from "../components/form";
 import { BackBtn } from "../components/backBtn";
 
 export const ProductDetaills = () => {
@@ -27,8 +26,8 @@ export const ProductDetaills = () => {
   return (
     <>
       <BackBtn />
-        {/* <div className={productDeatilsPageStyle.container}> */}
-        <div className={productDeatilsPageStyle.detailsContainer}>
+        <div className={productDeatilsPageStyle.container}>
+        <div className={productDeatilsPageStyle.crouselContainer}>
         <Carousel
         swipeable={false}
         draggable={false}
@@ -56,7 +55,18 @@ export const ProductDetaills = () => {
         
       </Carousel>
       </div>
-        {/* </div> */}
+      <div className={productDeatilsPageStyle.detailsContainer}>
+      <p >Iphone</p><br/>
+      <p><span className={productDeatilsPageStyle.detailKey}>Price</span>: 5000</p><br/>
+      <p><span className={productDeatilsPageStyle.detailKey}>Discount</span>: 5000</p><br/>
+      <p><span className={productDeatilsPageStyle.detailKey}>Stocks</span>: 5000</p><br/>
+      <p >An apple mobile which is nothing like apple</p>
+
+      <div className={productDeatilsPageStyle.btnContainer}>
+      <button className={productDeatilsPageStyle.btn}>Add to Cart</button>
+      </div>
+      </div>
+        </div>
       ;
     </>
   );

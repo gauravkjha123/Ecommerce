@@ -1,12 +1,10 @@
-import CardStyle from "../style/card.Style.module.css";
+import productItemStyle from "../style/productItem.Style.module.css";
 import deleteImg from "../assets/images/delete.png";
 import editImg from "../assets/images/edit.png";
-import { MdDelete, MdModeEditOutline } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { deleteAlbum } from "../redux/reducers/albumReducer";
-import { NavLink } from "react-router-dom";
 
-export const Card = ({ title = "Hello world", id }) => {
+export const ProductItem = ({ title = "Hello world", id }) => {
   const dispatch = useDispatch();
   const deleteAlbumFn = async (id) => {
     await fetch(`https://jsonplaceholder.typicode.com/albums/${id}`, {
@@ -16,21 +14,21 @@ export const Card = ({ title = "Hello world", id }) => {
   };
   return (
     <>
-      <div className={CardStyle.CardContainer}>
-      <div className={CardStyle.productNameImgContainer}>
+      <div className={productItemStyle.CardContainer}>
+      <div className={productItemStyle.productNameImgContainer}>
       <img src="https://dummyjson.com/image/i/products/3/1.jpg"/>
-      <div className={CardStyle.productNameContainer}>
+      <div className={productItemStyle.productNameContainer}>
       <p>I Phone</p>
       <p>5000</p>
       </div>
       </div>
-      <div className={CardStyle.productDescContainer}>
+      <div className={productItemStyle.productDescContainer}>
         <p>An apple mobile which is nothing like apple</p>
         </div>
-        <div className={CardStyle.productActionContainer}>
-          <div className={CardStyle.addToCartBtn}><p>Add To Cart</p></div>
-          <img src={editImg} className={CardStyle.img} />
-          <img src={deleteImg} className={CardStyle.img}/>
+        <div className={productItemStyle.productActionContainer}>
+          <div className={productItemStyle.addToCartBtn}><p>Add To Cart</p></div>
+          <img src={editImg} className={productItemStyle.img} />
+          <img src={deleteImg} className={productItemStyle.img}/>
         </div>
       </div>
     </>

@@ -1,0 +1,77 @@
+.CardContainer {
+  height: 200px;
+  width: 45%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+  background-color: black;
+  overflow: hidden;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.productImgContainer {
+  width: 45%;
+  height: 100%;
+}
+.productImgContainer > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.productDetailsContainer {
+  width: 45%;
+  height: 100%;
+  color: white;
+  padding: 10px;
+  text-align: start;
+}
+
+.cartActionContainer {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+.img {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.detailKey {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #328000;
+}
+
+.productItemCount{
+    height: 30px;
+    width: 75px;
+    margin: 10px;
+    border: 1px solid green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cancelBtn{
+    align-self: flex-end;
+    height: 18%;
+    width: 15%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #328000;
+    border-radius: 5px;
+    cursor: pointer;
+}
