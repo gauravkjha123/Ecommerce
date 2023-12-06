@@ -4,9 +4,13 @@ import Carousel from "react-multi-carousel";
 import { BackBtn } from "../components/backBtn";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { addToCart, removeFromCart } from "../redux/reducers/cartReducer";
+import { useDispatch } from "react-redux";
+import { showToastMessage } from "../notification/notify";
 
 export const ProductDetaills = () => {
   const { id } = useParams();
+  const dispatch=useDispatch()
   const [product, setProuct] = useState("");
   const fetchProduct = async () => {
     let product = localStorage.getItem(String(id));
@@ -80,7 +84,10 @@ export const ProductDetaills = () => {
           <p> {product.description}</p>
 
           <div className={productDeatilsPageStyle.btnContainer}>
-            <button className={productDeatilsPageStyle.btn}>Add to Cart</button>
+            <button onClick={()=>{
+              dispatch(addToCart(product));
+              showToastMessage("item Added to cart", "success");
+            }} className={productDeatilsPageStyle.btn}>Add to Cart</button>
           </div>
         </div>
       </div>
