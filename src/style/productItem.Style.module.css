@@ -6,34 +6,34 @@
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  background-color:black;
+  background-color: black;
   padding: 10px;
   overflow: hidden;
   margin: 5px;
   border-radius: 5px;
 }
 
-.productNameImgContainer{
+.productNameImgContainer {
   width: 50%;
-  height: 80%;
+  height: 100%;
   border-radius: 5px;
   display: flex;
   color: white;
   justify-content: start;
   align-items: center;
-  
 }
-.productNameImgContainer>img{
+.productNameImgContainer > img {
   height: 100%;
   width: 30%;
-  object-fit: contain;
+  margin: 10px;
+  object-fit: cover;
 }
 
-.productNameContainer{
+.productNameContainer {
   margin-left: 5px;
   align-self: flex-start;
 }
-.productActionContainer{
+.productActionContainer {
   height: 25%;
   width: 15%;
   align-self: flex-end;
@@ -43,15 +43,15 @@
   justify-content: space-between;
   align-items: center;
 }
-.productDescContainer{
+.productDescContainer {
   width: 15%;
   height: 80%;
   color: white;
-  word-wrap:break-word;
+  word-wrap: break-word;
   text-align: center;
 }
 
-.addToCartBtn{
+.addToCartBtn {
   height: 90%;
   width: 60%;
   border-radius: 5px;
@@ -64,7 +64,7 @@
   justify-content: center;
   align-items: center;
 }
-.img{
+.img {
   height: 25px;
   width: 25px;
   cursor: pointer;
@@ -109,4 +109,35 @@
   cursor: pointer;
   background-color: red;
   border-radius: 5px;
+}
+
+.cancelBtn {
+  height: 90%;
+  width: 40%;
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+  background-color: gray;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.saveBtn {
+  height: 90%;
+  width: 40%;
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+  background-color: #173d5c;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputContainer {
+  margin: 10px;
 }

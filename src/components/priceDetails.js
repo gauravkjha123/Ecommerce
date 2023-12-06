@@ -1,10 +1,6 @@
 import CardStyle from "../style/priceDetails.style.module.css";
-import increamentImg from "../assets/images/increament.png";
-import decreamentImg from "../assets/images/decreament.png";
-import { useDispatch } from "react-redux";
-import { deleteAlbum } from "../redux/reducers/albumReducer";
 
-export const PriceDetails = ({ img, name, price, productCartCount }) => {
+export const PriceDetails = ({  totalAmount, totalItem, totalAmountWithDiscount,totalDiscount }) => {
   return (
     <>
       <div className={CardStyle.CardContainer}>
@@ -12,20 +8,20 @@ export const PriceDetails = ({ img, name, price, productCartCount }) => {
           <h3>Price Details</h3>
         </div>
         <div className={CardStyle.detailsKeyContainer}>
-          <p>Price(4 item)</p>
-          <p>2977</p>
+          <p>Price({totalItem} item)</p>
+          <p>{totalAmount}</p>
         </div>
         <div className={CardStyle.detailsKeyContainer}>
           <p>Discount</p>
-          <p>475</p>
+          <p>{Math.floor(totalDiscount)}</p>
         </div>
         <div className={CardStyle.detailsKeyContainer}>
           <p>Delivery Charges</p>
-          <p>Free</p>
+          <p style={{color:"green"}}>Free</p>
         </div>
         <div className={CardStyle.detailsKeyContainer}>
           <h4>Total Amount</h4>
-          <p>2502</p>
+          <p>{Math.floor(totalAmountWithDiscount)}</p>
         </div>
       </div>
     </>

@@ -1,0 +1,19 @@
+.container {
+  margin: auto;
+  width: 80%;
+  display: flex;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  flex-wrap: wrap;
+  width: 50%;
+  height: fit-content;
+  overflow-y: scroll;
+}
+
+.listContainer::-webkit-scrollbar {
+  display: none;
+}

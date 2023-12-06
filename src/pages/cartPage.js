@@ -1,23 +1,39 @@
-import AlbumListStyle from "../style/albumList.style.module.css";
+import cartPageStyle from "../style/cartPage.style.module.css";
 import { CartItem } from "../components/cartItem";
 import { PriceDetails } from "../components/priceDetails";
 import { useSelector } from "react-redux";
-import { albumSelector } from "../redux/reducers/albumReducer";
-import { NavLink } from "react-router-dom";
+import { cartSelector } from "../redux/reducers/cartReducer";
 
 export const CartPage = () => {
-  const { albums } = useSelector(albumSelector);
-  
+  const {
+    cart,
+    totalAmount,
+    totalItem,
+    totalAmountWithDiscount,
+    totalDiscount,
+  } = useSelector(cartSelector);
+  console.log(totalAmount, totalItem);
   return (
-    <div className={AlbumListStyle.container}>
-      <div className={AlbumListStyle.btnContainer}>
-        <NavLink to="/add" className={AlbumListStyle.btn}>Add Album</NavLink>
-      </div>
-      <div className={AlbumListStyle.listContainer}>
-        {albums.map((value, index) => (
-          <ProductItem key={index} title={value.title} id={value.id} />
-        ))}
-      </div>
+    <div className={cartPageStyle.container}>
+      {cart.length > 0 ? (
+        <>
+          <div className={cartPageStyle.listContainer}>
+            {cart.map((value, index) => (
+              <CartItem key={index} product={value} />
+            ))}
+          </div>
+          <PriceDetails
+            totalAmount={totalAmount}
+            totalItem={totalItem}
+            totalAmountWithDiscount={totalAmountWithDiscount}
+            totalDiscount={totalDiscount}
+          />
+        </>
+      ) : (
+        <div>
+          <h4>Cart is emppty</h4>
+        </div>
+      )}
     </div>
   );
 };

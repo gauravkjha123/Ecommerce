@@ -1,22 +1,11 @@
 import BackBtntyle from "../style/backBtn.style.module.css";
 import { TiArrowBack } from "react-icons/ti";
-import { useDispatch } from "react-redux";
-import { deleteAlbum } from "../redux/reducers/albumReducer";
 import { NavLink } from "react-router-dom";
 
-export const BackBtn = ({ title = "Hello world", id }) => {
-  const dispatch = useDispatch();
-  const deleteAlbumFn = async (id) => {
-    await fetch(`https://jsonplaceholder.typicode.com/albums/${id}`, {
-      method: "DELETE",
-    });
-    dispatch(deleteAlbum({ id: id }));
-  };
+export const BackBtn = () => {
   return (
-  
-      <NavLink to ="/" className={BackBtntyle.continer}>
+    <NavLink to="/" className={BackBtntyle.continer}>
       <TiArrowBack className={BackBtntyle.backIcon} />
-      </NavLink>
-   
+    </NavLink>
   );
 };

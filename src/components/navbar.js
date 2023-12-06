@@ -2,20 +2,11 @@ import NavBarStyle from "../style/navbar.style.module.css";
 import cartImg from "../assets/images/cart.png";
 import userImg from "../assets/images/user.png";
 import { Link, Outlet } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { fetchAlbums } from "../redux/reducers/albumReducer";
-import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { cartSelector } from "../redux/reducers/cartReducer";
 
 export const NavBar = () => {
-  const dispatch = useDispatch();
-  const fetchAlbumsFromApi = async () => {
-    let res = await fetch("https://jsonplaceholder.typicode.com/albums");
-    let albums = await res.json();
-    dispatch(fetchAlbums(albums));
-  };
-  useEffect(() => {
-    fetchAlbumsFromApi();
-  }, []);
+  const { totalItem } = useSelector(cartSelector);
   return (
     <>
       <div className={NavBarStyle.navbar}>
@@ -31,20 +22,30 @@ export const NavBar = () => {
               </Link>
             </li>
             <li>
-              <Link className={NavBarStyle.navlink}>Products </Link>
+              <Link to="/" className={NavBarStyle.navlink}>
+                Products{" "}
+              </Link>
             </li>
             <li>
-              <Link className={NavBarStyle.navlink}>Add a Product</Link>{" "}
+              <Link to="/add" className={NavBarStyle.navlink}>
+                Add Product
+              </Link>
             </li>
           </div>
           <div
             className={NavBarStyle.navMenuContainer}
             style={{ justifyContent: "space-between", width: "10%" }}
           >
-            <li className={NavBarStyle.cartContainer}>
-              <img className={NavBarStyle.img} src={cartImg} />
-              <p className={NavBarStyle.cartCount}>2</p>{" "}
-            </li>
+            <Link to="/cart">
+              <li className={NavBarStyle.cartContainer}>
+                <img className={NavBarStyle.img} src={cartImg} />
+                {totalItem ? (
+                  <p className={NavBarStyle.cartCount}>{totalItem}</p>
+                ) : (
+                  ""
+                )}
+              </li>
+            </Link>
             <li>
               <img className={NavBarStyle.img} src={userImg} />
             </li>

@@ -14,7 +14,7 @@
 .btn {
   outline: none;
   cursor: pointer;
-  width: 100px;
+  width: 120px;
   border: 2px solid red;
   background-color: black;
   color: white;
@@ -37,4 +37,12 @@
 
 .listContainer::-webkit-scrollbar {
   display: none;
+}
+
+.img {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  padding: 1px;
+  margin: 5px;
 }

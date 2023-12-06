@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import albumReducer from "./redux/reducers/albumReducer"
-
+import productReducer from "./redux/reducers/productReducer"
+import cartReducer from "./redux/reducers/cartReducer"
 
 export const store = configureStore({
   reducer: {
-    albumReducer
+    productReducer,
+    cartReducer
   },
 })
