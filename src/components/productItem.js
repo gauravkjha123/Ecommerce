@@ -37,7 +37,7 @@ export const ProductItem = ({ title, id, price, thumbnail, description,addToCart
       {
         method: "PUT",
         body: JSON.stringify({
-          id: 1,
+          id: id,
           title: name,
           price: productPrice,
           description: productDescription,
@@ -46,8 +46,13 @@ export const ProductItem = ({ title, id, price, thumbnail, description,addToCart
           "Content-type": "application/json; charset=UTF-8",
         },
       }
-    );
-    let product = await res.json();
+    );;
+    let product = {
+      id: id,
+      title: name,
+      price: productPrice,
+      description: productDescription,
+    };
     showToastMessage("Edit suceesful", "success");
     dispatch(updateProduct(product));
     setIsEdit(false);
@@ -60,8 +65,8 @@ export const ProductItem = ({ title, id, price, thumbnail, description,addToCart
         method: "DELETE",
       }
     );
-    showToastMessage("item deleted", "warning");
     dispatch(deleteProduct({ id: id }));
+    showToastMessage("item deleted", "warning");
   };
   const navigateToProductDetails = (id) => {
     localStorage.setItem(String(id),JSON.stringify(products.filter((value)=>value.id==id)?.[0]))

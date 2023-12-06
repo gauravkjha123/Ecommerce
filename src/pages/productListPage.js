@@ -3,7 +3,7 @@ import crossImg from "../assets/images/cross.png";
 import { ProductItem } from "../components/productItem";
 import { useDispatch, useSelector } from "react-redux";
 import { productSelector } from "../redux/reducers/productReducer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { addToCart } from "../redux/reducers/cartReducer";
 import { showToastMessage } from "../notification/notify";
 
@@ -12,9 +12,9 @@ export const ProductListPage = () => {
   const dispatch = useDispatch();
   const [productList, setProductList] = useState(null);
   const [sorted, setSorted] = useState(false);
-  if (products && products.length > 0 && !productList) {
-    setProductList(products);
-  }
+  useEffect(()=>{
+    setProductList(products)
+  },[products])
 
   const handleAddToCart = (id) => {
     let product = products.filter((value) => value.id == id)[0];
